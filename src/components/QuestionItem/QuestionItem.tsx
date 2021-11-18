@@ -12,7 +12,7 @@ const QuestionItem: React.FC<IProps> = ({ questionItem }) => {
   return (
     <div className="question__item">
       <div className="question__body">
-        <h4>{question}</h4>
+        <h3>{question}</h3>
         <div className="question__options">
           {qusetionOptions.map((option, index) => (
             <p key={option}>{option}</p>

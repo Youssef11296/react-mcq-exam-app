@@ -1,4 +1,7 @@
+// Components
 import QuestionsList from "../../components/QuestionsList/QuestionsList";
+// Styles
+import "./ExamScreen.scss";
 
 const ExamScreen = () => {
   return (

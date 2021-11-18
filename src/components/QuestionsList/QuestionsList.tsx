@@ -8,10 +8,12 @@ import "./QuestionsList.scss";
 const QuestionsList = () => {
   return (
     <div className="questions__list">
-      <h1>Exam</h1>
-      {questions.map((questionItem, index) => (
-        <QuestionItem key={questionItem.id} questionItem={questionItem} />
-      ))}
+      {questions.map(
+        (questionItem, index) =>
+          questionItem.id === 1 && (
+            <QuestionItem key={questionItem.id} questionItem={questionItem} />
+          )
+      )}
     </div>
   );
 };
