@@ -1,3 +1,8 @@
+interface Action {
+  type: string;
+  payload: any;
+}
+
 interface Question {
   id: number;
   question: string;
