@@ -1,0 +1,33 @@
+@import '../../sass';
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+
+            li {
+                a {
+                    color: $main-color;
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    margin: 0 .5rem;
+
+                    &:last-child {
+                        margin: 0 0 0 .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
