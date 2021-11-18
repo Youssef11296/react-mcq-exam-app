@@ -1,1 +1,2 @@
 export const ANSWER_QUESTION = "ANSWER_QUESTION";
+export const START_EXAM = "START_EXAM";

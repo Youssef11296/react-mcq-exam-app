@@ -1,4 +1,6 @@
 // Styles
+import { useDispatch } from "react-redux";
+import { answerQuestion } from "../../store/actions";
 import "./QuestionItem.scss";
 // IProps
 interface IProps {
@@ -8,6 +10,17 @@ interface IProps {
 const QuestionItem: React.FC<IProps> = ({ questionItem }) => {
   const { question, correct_answer, incorrect_answers } = questionItem;
   const qusetionOptions = [...incorrect_answers, correct_answer];
+  // dispatcher
+  const dispatch = useDispatch();
+  // answer handler
+  const answerHandler = (answer: string) => {
+    dispatch(
+      answerQuestion(
+        questionItem.number,
+        answer === questionItem.correct_answer
+      )
+    );
+  };
 
   return (
     <div className="question__item">
@@ -15,7 +28,9 @@ const QuestionItem: React.FC<IProps> = ({ questionItem }) => {
         <h3>{question}</h3>
         <div className="question__options">
           {qusetionOptions.map((option, index) => (
-            <p key={option}>{option}</p>
+            <p key={option} onClick={() => answerHandler(option)}>
+              {option}
+            </p>
           ))}
         </div>
       </div>

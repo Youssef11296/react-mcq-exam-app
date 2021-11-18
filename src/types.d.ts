@@ -5,6 +5,7 @@ interface Action {
 
 interface Question {
   id: number;
+  number: number;
   question: string;
   correct_answer: string;
   incorrect_answers: string[];
