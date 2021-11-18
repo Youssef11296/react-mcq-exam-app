@@ -5,7 +5,6 @@ import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   questionNum: 1,
   rightAnswersNum: 0,
-  wrongAnswersNum: 0,
 };
 
 // Reducer
@@ -23,9 +22,6 @@ const questionsReducer = (state = initialState, action: Action) => {
         rightAnswersNum: action.payload.result
           ? state.rightAnswersNum + 1
           : state.rightAnswersNum,
-        wrongAnswersNum: action.payload.result
-          ? state.wrongAnswersNum
-          : state.wrongAnswersNum + 1,
       };
     default:
       return { ...state };

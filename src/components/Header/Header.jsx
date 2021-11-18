@@ -1,5 +1,5 @@
 // Modules & Hooks
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // Styles
 import "./Header.scss";
 
@@ -13,13 +13,19 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Exam</Link>
+              <NavLink activeClassName="is-active" to="/">
+                Exam
+              </NavLink>
             </li>
             <li>
-              <Link to="/result">Result</Link>
+              <NavLink activeClassName="is-active" to="/result">
+                Result
+              </NavLink>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <NavLink activeClassName="is-active" to="/login">
+                Login
+              </NavLink>
             </li>
           </ul>
         </nav>

@@ -47,12 +47,16 @@ header {
                 }
 
                 a {
-                    color: #666;
+                    color: #888;
                     font-size: 1.2rem;
                     text-decoration: none;
                     transition: all .3s ease-in-out;
 
                     &:hover {
+                        color: #000;
+                    }
+
+                    &.active {
                         color: #000;
                     }
                 }

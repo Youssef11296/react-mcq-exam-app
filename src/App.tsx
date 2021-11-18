@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import ExamScreen from "./screens/ExamScreen/ExamScreen";
 // Styles
 import "./App.scss";
+import ResultScreen from "./screens/ResultScreen/ResultScreen";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ExamScreen />} />
           <Route path="/login" element={<h1>Login</h1>} />
-          <Route path="/result" element={<h1>Result</h1>} />
+          <Route path="/result" element={<ResultScreen />} />
         </Routes>
       </div>
     </Router>

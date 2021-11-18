@@ -1,0 +1,40 @@
+.result__screen {
+    height: 90vh;
+    padding: 1rem 2rem;
+    display: grid;
+    place-items: center;
+
+    .result__container {
+        &>div {
+            font-size: 2rem;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+
+            &.right__answers {
+                margin-bottom: 2rem;
+                background: #080;
+            }
+
+            &.wrong__answers {
+                background: #f00;
+            }
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 1rem;
+            border-radius: 5px;
+            background: #3498db;
+
+            a {
+                font-size: 1.2rem;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
+}
