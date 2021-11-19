@@ -1,6 +1,4 @@
 .result__screen {
-    height: 90vh;
-    padding: 1rem 2rem;
     display: grid;
     place-items: center;
 
@@ -19,6 +17,10 @@
 
             &.wrong__answers {
                 background: #f00;
+            }
+
+            &.result__percentage {
+                color: #000;
             }
         }
 

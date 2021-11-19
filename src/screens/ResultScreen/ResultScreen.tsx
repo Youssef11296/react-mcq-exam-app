@@ -24,17 +24,23 @@ const ResultScreen = () => {
             </h1>
             <div className="options">
               <button>
-                <Link to="/">Beck to the exam</Link>
+                <Link to="/">Back to the exam</Link>
               </button>
             </div>
           </>
         ) : (
           <>
             <div className="right__answers">
-              Total of your right answers: {rightAnswersNum}
+              <p>Total of your right answers: {rightAnswersNum}</p>
             </div>
             <div className="wrong__answers">
-              Total of your wrong answers: {7 - rightAnswersNum}
+              <p>Total of your wrong answers: {7 - rightAnswersNum}</p>
+            </div>
+            <div className="result__percentage">
+              <p>
+                Your result in percentage is %
+                {Math.round((rightAnswersNum / 7) * 100)}
+              </p>
             </div>
           </>
         )}

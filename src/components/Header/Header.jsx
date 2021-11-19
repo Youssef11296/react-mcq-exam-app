@@ -13,17 +13,17 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <NavLink activeClassName="is-active" to="/">
+              <NavLink activeclassname="is-active" to="/">
                 Exam
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="is-active" to="/result">
+              <NavLink activeclassname="is-active" to="/result">
                 Result
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="is-active" to="/login">
+              <NavLink activeclassname="is-active" to="/login">
                 Login
               </NavLink>
             </li>
