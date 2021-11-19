@@ -20,6 +20,8 @@ The user have to select the correct answer, or at select any answer of the fourt
 
 - Redux
 
+- TypeScript
+
 - Sass
 
 - Material UI

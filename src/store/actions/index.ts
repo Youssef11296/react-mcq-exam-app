@@ -3,7 +3,7 @@ import * as actionTypes from "./actionTypes";
 
 // Action creators
 // login
-export const login = (userData: User) => {
+export const login = (userData: User): Action => {
   return {
     type: actionTypes.LOGIN,
     payload: userData,
@@ -11,13 +11,24 @@ export const login = (userData: User) => {
 };
 
 // logout
-export const logout = () => {
+export const logout = (): Action => {
   return {
     type: actionTypes.LOGOUT,
   };
 };
 
-export const answerQuestion = (questionNum: number, result: boolean) => {
+// user auth (simulation)
+export const userAuth = (auth: boolean): Action => {
+  return {
+    type: actionTypes.USER_AUTH,
+    payload: auth,
+  };
+};
+
+export const answerQuestion = (
+  questionNum: number,
+  result: boolean
+): Action => {
   return {
     type: actionTypes.ANSWER_QUESTION,
     payload: {

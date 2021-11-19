@@ -21,7 +21,7 @@ const Header = () => {
       <Nav activeNav={activeNav} toggleNav={toggleNav} />
       <div className="header__menu" onClick={toggleNav}>
         <IconButton>
-          <Menu />
+          <Menu className="mui-icon" />
         </IconButton>
       </div>
     </header>

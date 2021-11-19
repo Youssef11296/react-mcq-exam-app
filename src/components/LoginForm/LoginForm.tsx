@@ -2,8 +2,8 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { login, logout } from "../../store/actions";
-import {useNavigate} from 'react-router-dom'
+import { login, logout, userAuth } from "../../store/actions";
+import { useNavigate } from "react-router-dom";
 // components
 import RedirectMessage from "../RedirectedMessage/RedirectedMessage";
 // styles
@@ -17,7 +17,7 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // selectors
   const user = useSelector((state: RootState) => state.main.user);
@@ -25,20 +25,26 @@ const LoginForm = () => {
   // dispatcher
   const dispatch = useDispatch();
 
-  console.log({ errors });
-
   // onSubmit method
   const onSubmit = (data: any) => {
-    console.log({ data });
-    dispatch(login(data));
-    navigate('/exam')
-    // window.location.assign("/exam");
-    reset({ name: null, email: null, password: null });
+    dispatch(userAuth(false));
+    // calling api simulation for user auth
+    setTimeout(() => {
+      dispatch(login(data));
+      navigate("/exam");
+      dispatch(userAuth(true));
+      reset({ name: null, email: null, password: null });
+    }, 6000);
   };
 
   // logout handler
   const logoutHandler = () => {
-    dispatch(logout());
+    dispatch(userAuth(false));
+    // calling api simulation for user auth
+    setTimeout(() => {
+      dispatch(logout());
+      dispatch(userAuth(true));
+    }, 2000);
   };
 
   if (user)
@@ -61,7 +67,7 @@ const LoginForm = () => {
           {...register("name", { required: true, minLength: 3, maxLength: 30 })}
           placeholder="ex. Youssef Shaaban"
         />
-        {errors.name && <span>Password must conatin 3 letters at least</span>}
+        {errors.name && <span>Username must conatin 3 letters at least</span>}
       </div>
       <div className="input__field">
         <label htmlFor="email">Email</label>

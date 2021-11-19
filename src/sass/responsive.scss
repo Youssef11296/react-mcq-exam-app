@@ -1,9 +1,16 @@
 @media screen and(max-width:500px) {
 
+    // App
+    .app {
+        &>div {
+            // margin-top: 5rem;
+            // flex: 0 1 auto !important;
+        }
+    }
+
     // Header
     header {
         .header__nav {
-
             position: fixed;
             padding-top: 4rem;
             top: 0;
@@ -27,6 +34,18 @@
                         margin: 4rem 0;
                         transform: translateX(100%);
                         animation: fadeFromRight .5s ease-in-out forwards;
+
+                        &:first-child {
+                            animation-delay: 0s;
+                        }
+
+                        &:nth-child(2) {
+                            animation-delay: 0.25s;
+                        }
+
+                        &:last-child {
+                            animation-delay: .5s;
+                        }
 
                         a {
                             font-size: 2rem;
@@ -59,6 +78,32 @@
         }
     }
 
+
+    .question__item {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
+
+        .question__body {
+            h3 {
+                font-size: 1rem;
+            }
+
+            .question__options {
+                p {
+                    font-size: 1rem;
+                    display: grid;
+                    place-items: center;
+
+                    &:hover {
+                        background: #3498db;
+                    }
+                }
+            }
+        }
+    }
+
     // Redirected Message
     .redirected__message {
         h2 {
@@ -83,6 +128,14 @@
 
         .input__field {
             margin-bottom: 1rem;
+
+            label {
+                font-weight: 500;
+            }
+
+            span {
+                font-size: .8rem;
+            }
         }
     }
 

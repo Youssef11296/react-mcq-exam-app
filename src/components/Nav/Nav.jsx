@@ -9,24 +9,24 @@ const Nav = ({ activeNav, toggleNav }) => {
       <nav>
         <ul>
           <li onClick={toggleNav}>
-            <NavLink activeClassName="is-active" to="/exam">
+            <NavLink activeclassname="is-active" to="/exam">
               Exam
             </NavLink>
           </li>
           <li onClick={toggleNav}>
-            <NavLink activeClassName="is-active" to="/result">
+            <NavLink activeclassname="is-active" to="/result">
               Result
             </NavLink>
           </li>
           {!user ? (
             <li onClick={toggleNav}>
-              <NavLink activeClassName="is-active" to="/">
+              <NavLink activeclassname="is-active" to="/">
                 Login
               </NavLink>
             </li>
           ) : (
             <li onClick={toggleNav}>
-              <NavLink activeClassName="is-active" to="/">
+              <NavLink activeclassname="is-active" to="/">
                 Logout
               </NavLink>
             </li>

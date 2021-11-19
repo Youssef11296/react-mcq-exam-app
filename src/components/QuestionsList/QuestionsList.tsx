@@ -20,10 +20,10 @@ const QuestionsList = () => {
       <div className="questions__list__container">
         {shuffledQuestions.map((questionItem, index) =>
           index === questionNum - 1 ? (
-            <>
+            <div key={questionItem.id}>
               <QuestionItem key={questionItem.id} questionItem={questionItem} />
               <p className="question__number">{index + 1}</p>
-            </>
+            </div>
           ) : null
         )}
 

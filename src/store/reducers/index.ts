@@ -6,6 +6,7 @@ const initialState = {
   questionNum: 1,
   rightAnswersNum: 0,
   user: null,
+  userAuth: true,
 };
 
 // Reducer
@@ -17,6 +18,12 @@ const questionsReducer = (state = initialState, action: Action) => {
         questionNum: 1,
         rightAnswersNum: 0,
         user: action.payload,
+        userAuth: false,
+      };
+    case actionTypes.USER_AUTH:
+      return {
+        ...state,
+        userAuth: action.payload,
       };
     case actionTypes.LOGOUT:
       return {
@@ -24,9 +31,9 @@ const questionsReducer = (state = initialState, action: Action) => {
         questionNum: 1,
         rightAnswersNum: 0,
         user: null,
+        userAuth: true,
       };
     case actionTypes.ANSWER_QUESTION:
-      console.log(state);
       return {
         ...state,
         questionNum: action.payload.questionNum + 1,
