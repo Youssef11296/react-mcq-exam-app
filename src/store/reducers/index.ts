@@ -14,6 +14,8 @@ const questionsReducer = (state = initialState, action: Action) => {
     case actionTypes.LOGIN:
       return {
         ...state,
+        questionNum: 1,
+        rightAnswersNum: 0,
         user: action.payload,
       };
     case actionTypes.LOGOUT:
