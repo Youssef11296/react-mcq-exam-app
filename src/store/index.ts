@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import questionsReducer from "./reducers";
 
 const rootReducr = combineReducers({
-  questions: questionsReducer,
+  main: questionsReducer,
 });
 
 const store = createStore(rootReducr, applyMiddleware(compose(thunk)));

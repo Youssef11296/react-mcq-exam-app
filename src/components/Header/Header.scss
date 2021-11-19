@@ -5,7 +5,13 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    z-index: 100;
+    width: 100%;
+    padding: 1rem 2rem;
     box-shadow: 0 0 2px 4px rgba(0, 0, 0, .2);
 
     h1 {

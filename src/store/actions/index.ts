@@ -2,9 +2,18 @@
 import * as actionTypes from "./actionTypes";
 
 // Action creators
-export const startExam = () => {
+// login
+export const login = (userData: User) => {
   return {
-    type: actionTypes.START_EXAM,
+    type: actionTypes.LOGIN,
+    payload: userData,
+  };
+};
+
+// logout
+export const logout = () => {
+  return {
+    type: actionTypes.LOGOUT,
   };
 };
 

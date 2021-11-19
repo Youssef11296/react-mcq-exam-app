@@ -3,40 +3,36 @@
     place-items: center;
 
     .result__container {
-        &>div {
-            font-size: 2rem;
-            padding: 1rem;
-            border-radius: 5px;
-            text-align: center;
-            color: #fff;
+        .result__answers {
+            display: flex;
+            align-items: center;
 
-            &.right__answers {
-                margin-bottom: 2rem;
-                background: #080;
-            }
+            &>div {
+                font-size: 1.5rem;
+                padding: 1rem;
+                border-radius: 5px;
+                text-align: center;
+                color: #fff;
 
-            &.wrong__answers {
-                background: #f00;
-            }
+                &.right__answers {
+                    margin-right: 2rem;
+                    background: #080;
+                }
 
-            &.result__percentage {
-                color: #000;
+                &.wrong__answers {
+                    background: #f00;
+                }
             }
         }
 
-        button {
-            border: none;
-            outline: none;
-            padding: 1rem;
-            border-radius: 5px;
+        .result__percentage {
+            color: #fff;
+            font-size: 2rem;
             background: #3498db;
-
-            a {
-                font-size: 1.2rem;
-                color: #fff;
-                font-weight: 600;
-                text-decoration: none;
-            }
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: center;
         }
     }
 }

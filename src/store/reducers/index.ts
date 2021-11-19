@@ -5,14 +5,23 @@ import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   questionNum: 1,
   rightAnswersNum: 0,
+  user: null,
 };
 
 // Reducer
 const questionsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
-    case actionTypes.START_EXAM:
+    case actionTypes.LOGIN:
       return {
         ...state,
+        user: action.payload,
+      };
+    case actionTypes.LOGOUT:
+      return {
+        ...state,
+        questionNum: 1,
+        rightAnswersNum: 0,
+        user: null,
       };
     case actionTypes.ANSWER_QUESTION:
       console.log(state);

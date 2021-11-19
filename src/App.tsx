@@ -8,15 +8,19 @@ import ResultScreen from "./screens/ResultScreen/ResultScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 // styles
 import "./App.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
 
 const App = () => {
+  const user = useSelector((state: RootState) => state.main.user);
+  console.log({ user });
   return (
     <Router>
       <div className="app">
         <Header />
         <Routes>
-          <Route path="/" element={<ExamScreen />} />
-          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/exam" element={<ExamScreen />} />
+          <Route path="/" element={<LoginScreen />} />
           <Route path="/result" element={<ResultScreen />} />
         </Routes>
       </div>

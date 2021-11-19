@@ -1,0 +1,92 @@
+@media screen and(max-width:500px) {
+    .result__screen {
+        .result__container {
+            &>div {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    // Questions List
+    .questions__list {
+        .question__number {
+            font-size: 1rem;
+            margin: 4rem auto 0;
+        }
+
+        button {
+            a {
+                font-size: 1rem;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Redirected Message
+    .redirected__message {
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        &__options {
+
+            button {
+                a {
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    // Login
+    form {
+        width: 300px;
+        max-width: 300px;
+
+        .input__field {
+            margin-bottom: 1rem;
+        }
+    }
+
+    // Header
+    header {
+        nav {
+            ul {
+                li {
+                    margin: 0 .5rem;
+
+                    a {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    // Result
+    .result__screen {
+        display: grid;
+        place-items: center;
+
+        .result__container {
+            .result__answers {
+                &>div {
+                    font-size: 1rem;
+
+                    &.right__answers {
+                        margin-right: .5rem;
+                        background: #080;
+                    }
+                }
+            }
+
+            .result__percentage {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

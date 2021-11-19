@@ -1,2 +1,3 @@
 export const ANSWER_QUESTION = "ANSWER_QUESTION";
-export const START_EXAM = "START_EXAM";
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGIN";

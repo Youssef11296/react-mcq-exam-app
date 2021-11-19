@@ -1,5 +1,10 @@
 // modules & hooks
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { login, logout } from "../../store/actions";
+import RedirectMessage from "../RedirectedMessage/RedirectedMessage";
+
 // styles
 import "./LoginForm.scss";
 
@@ -10,11 +15,37 @@ const LoginForm = () => {
     reset,
     formState: { errors },
   } = useForm();
+
+  // selectors
+  const user = useSelector((state: RootState) => state.main.user);
+
+  // dispatcher
+  const dispatch = useDispatch();
+
   console.log({ errors });
+
+  // onSubmit method
   const onSubmit = (data: any) => {
     console.log({ data });
+    dispatch(login(data));
+    // window.location.assign("/exam");
     reset({ name: null, email: null, password: null });
   };
+
+  // logout handler
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
+  if (user)
+    return (
+      <RedirectMessage
+        message="Are you sure you want to logout?"
+        option="logout"
+        optionPath="/"
+        optionController={logoutHandler}
+      />
+    );
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

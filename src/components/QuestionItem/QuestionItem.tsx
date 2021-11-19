@@ -1,24 +1,27 @@
-// Styles
+// modules & hooks
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { answerQuestion } from "../../store/actions";
+// styles
 import "./QuestionItem.scss";
-// IProps
-interface IProps {
+
+// props
+interface Props {
   questionItem: Question;
 }
 
-const QuestionItem: React.FC<IProps> = ({ questionItem }) => {
+const QuestionItem: React.FC<Props> = ({ questionItem }) => {
   const { question, correct_answer, incorrect_answers } = questionItem;
   const qusetionOptions = [...incorrect_answers, correct_answer].sort(
     () => 0.5 - Math.random()
   );
+
   // selectors
-  const questionNum = useSelector(
-    (state: RootState) => state.questions.questionNum
-  );
+  const questionNum = useSelector((state: RootState) => state.main.questionNum);
+
   // dispatcher
   const dispatch = useDispatch();
+
   // answer handler
   const answerHandler = (answer: string) => {
     dispatch(

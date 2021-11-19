@@ -1,25 +1,19 @@
-// Modules & Hooks
-import React from "react";
+// modules & hooks
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { RootState } from "../../store";
 import { questions } from "../../utils/questions.json";
-// Components
+// components
 import QuestionItem from "../QuestionItem/QuestionItem";
-// Styles
+import RedirectMessage from "../RedirectedMessage/RedirectedMessage";
+// styles
 import "./QuestionsList.scss";
 
 // shuffled questions
 const shuffledQuestions = questions.sort(() => 0.5 - Math.random());
 
-const QuestionsList = React.memo(() => {
-  console.log(shuffledQuestions);
-
+const QuestionsList = () => {
   // selectors
-  const questionNum = useSelector(
-    (state: RootState) => state.questions.questionNum
-  );
-  console.log({ questionNum });
+  const questionNum = useSelector((state: RootState) => state.main.questionNum);
 
   return (
     <div className="questions__list">
@@ -34,18 +28,15 @@ const QuestionsList = React.memo(() => {
         )}
 
         {questionNum === 8 && (
-          <div className="options">
-            <button>
-              <Link to="/result">Check your result</Link>
-            </button>
-            <button>
-              <Link to="/">Start a new exam</Link>
-            </button>
-          </div>
+          <RedirectMessage
+            message="You have successully finished the exam"
+            option="Check your result"
+            optionPath="/result"
+          />
         )}
       </div>
     </div>
   );
-});
+};
 
 export default QuestionsList;
