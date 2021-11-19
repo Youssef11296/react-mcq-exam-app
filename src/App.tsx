@@ -1,12 +1,12 @@
-// Modules & Hooks
+// modules & hooks
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// Components
+// components
 import Header from "./components/Header/Header";
-// Screens
+// screens
 import ExamScreen from "./screens/ExamScreen/ExamScreen";
 import ResultScreen from "./screens/ResultScreen/ResultScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
-// Styles
+// styles
 import "./App.scss";
 
 const App = () => {
