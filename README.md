@@ -1,3 +1,54 @@
+# Overview
+
+This project is a simple web application built and created by React and Redux.
+
+# How It Works
+
+This project is a simple mcq exam app that allows the user to answer each question.
+The user have to login first to be allowed to start the exam.
+The app puts seven question to the user provided with 4 options.
+Every qiuestion have 3 wrong answer and a single correct answer.
+The user have to select the correct answer, or at select any answer of the fourth options to jump to the next question of the exam.
+
+# Main Techs & Dependencies
+
+- React JS
+
+- React Router Dom
+
+- React Hook Form
+
+- Redux
+
+- Sass
+
+- Material UI
+
+# Project Structure
+
+- The src directory that is the main directory in the root:
+- The src consists of main directories such as
+
+  - compnents: contains main components of the project such as
+
+    - Header, LoginForm, QuestionItem, QuestionsList and RedirectedMessage
+      Good to mention that these components are the main blocks of every page in the app.
+      Basicaly every single page or screen consists of one component or more
+
+  - screens: contains the main pages of the app every screen consists of one or more component, and   the screens directory consists of three directory each one is a screen or a page of the application such as
+    
+    - ExamScreen: the user can nvigate to it from the header nav by clicking the Exam link
+    
+    - ResultScreen: the user can nvigate to it from the header nav by clicking the Result link
+    
+    - LoginScreen: the first screen that appears to the user where he has to fill all field of the form to start the exam and the user can nvigate to it as well to logout from the header nav by clicking the Login or Logout link
+
+  - store: contains the redux actions, reducers and the direct index file that contains and export the root redux store
+
+  - utils: conntains the data that the app depend on such as questions json file
+
+  - sass: contains the global styles
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

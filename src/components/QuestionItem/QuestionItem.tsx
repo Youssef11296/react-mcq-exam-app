@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { answerQuestion } from "../../store/actions";
+import {useNavigate} from 'react-router-dom'
 // styles
 import "./QuestionItem.scss";
 
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const QuestionItem: React.FC<Props> = ({ questionItem }) => {
-  const { question, correct_answer, incorrect_answers } = questionItem;
+  const {question, correct_answer, incorrect_answers } = questionItem;
   const qusetionOptions = [...incorrect_answers, correct_answer].sort(
     () => 0.5 - Math.random()
   );
@@ -22,11 +23,15 @@ const QuestionItem: React.FC<Props> = ({ questionItem }) => {
   // dispatcher
   const dispatch = useDispatch();
 
+  // navigator
+  const navigate = useNavigate()
+
   // answer handler
   const answerHandler = (answer: string) => {
     dispatch(
       answerQuestion(questionNum, answer === questionItem.correct_answer)
     );
+    if(questionNum === 7) navigate('/result')
   };
 
   return (

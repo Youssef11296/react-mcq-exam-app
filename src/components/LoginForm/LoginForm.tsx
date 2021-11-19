@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { login, logout } from "../../store/actions";
+import {useNavigate} from 'react-router-dom'
+// components
 import RedirectMessage from "../RedirectedMessage/RedirectedMessage";
-
 // styles
 import "./LoginForm.scss";
 
@@ -15,6 +16,8 @@ const LoginForm = () => {
     reset,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate()
 
   // selectors
   const user = useSelector((state: RootState) => state.main.user);
@@ -28,6 +31,7 @@ const LoginForm = () => {
   const onSubmit = (data: any) => {
     console.log({ data });
     dispatch(login(data));
+    navigate('/exam')
     // window.location.assign("/exam");
     reset({ name: null, email: null, password: null });
   };
