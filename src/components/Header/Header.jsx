@@ -1,46 +1,28 @@
 // Modules & Hooks
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { RootState } from "../../store";
+import { IconButton } from "@material-ui/core";
+import { Menu } from "@material-ui/icons";
+import { useState } from "react";
+import Nav from "../Nav/Nav.jsx";
 // Styles
 import "./Header.scss";
 
 const Header = () => {
-  // selectors
-  const user = useSelector((state: RootState) => state.main.user);
+  const [activeNav, setActiveNav] = useState(false);
+
+  // toggle nav
+  const toggleNav = () => {
+    setActiveNav((ps) => !ps);
+  };
   return (
     <header>
       <div className="header__logo">
         <h1>MCQ</h1>
       </div>
-      <div className="header__nav">
-        <nav>
-          <ul>
-            <li>
-              <NavLink activeclassname="is-active" to="/exam">
-                Exam
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeclassname="is-active" to="/result">
-                Result
-              </NavLink>
-            </li>
-            {!user ? (
-              <li>
-                <NavLink activeclassname="is-active" to="/">
-                  Login
-                </NavLink>
-              </li>
-            ) : (
-              <li>
-                <NavLink activeclassname="is-active" to="/">
-                  Logout
-                </NavLink>
-              </li>
-            )}
-          </ul>
-        </nav>
+      <Nav activeNav={activeNav} toggleNav={toggleNav} />
+      <div className="header__menu" onClick={toggleNav}>
+        <IconButton>
+          <Menu />
+        </IconButton>
       </div>
     </header>
   );
